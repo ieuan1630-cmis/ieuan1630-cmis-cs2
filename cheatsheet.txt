@@ -1,0 +1,38 @@
+ls = lists content of folder in
+
+ls "foldername" = lists contents of foldername
+	E.g. "foldername" = cmis-wd-ieuan1630
+
+ls -a "foldername" = lists ALL (including hidden) contents of foldername
+
+cd = takes you back into the ~ (home) folder
+
+cd "foldername" = takes you into the "foldername" folder
+
+git status = shows current status of repository
+	E.g. whether you have uncommitted files
+
+git log = list of all commands you've ever done
+
+gedit "textfilename" & = how to create new doc
+
+git add "textfilename" = adds file to repository
+
+git commit -m "descriptive text of what change being made" = commits a file to
+	the repository
+
+git push origin master = commits all changes to the servers
+
+
+github password = password used to push (use shift insert (nothing will show
+	up),hit enter)
+
+gedit "filename" = opens "filename"
+
+.. = parent folder
+
+. = current folder
+
+*shift+insrt* = paste
+
+*tab* = autocompletes command or file name
