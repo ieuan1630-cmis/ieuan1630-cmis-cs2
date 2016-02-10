@@ -23,6 +23,6 @@ rectangle_area_ninth = 1/9.0 * rectangle_length * rectangle_height #length and h
 #output
 print "This is " + str(name) + " telling the computer what to say. I'm " + str(age_yr) + " years old - that's " + str(age_mth) + " months old, meaning that I probably have about " + str(age_left) + " years left to live. And based on the deviation of my height from the average height (" + str(height_diff) + "m) it seems that average statistics are a very accurate standard to go by." #output message to be displayed includes 5 variables and uses concatenation method
 print #free line is printed for aesthetics
-print "If a square is",square_length,"units long, then it's area is", square_area, "units squared, and half of its volume is", cube_vol_half,"units cubed. If a rectangle's side lengths are",rectangle_length,"units and",rectangle_height,"units, then one ninth of its area is",rectangle_area_ninth,"units squared." #out put message to be displayed includes 6 variables, and uses comma method
+print "If a square is",square_length,"units long, then it's area is",square_area, "units squared, and half of its volume is", cube_vol_half,"units cubed. If a rectangle's side lengths are",rectangle_length,"units and",rectangle_height,"units, then one ninth of its area is",rectangle_area_ninth,"units squared." #out put message to be displayed includes 6 variables, and uses comma method
 print ";)" * 10000 #string ";)" is made to print 10000 times
 
