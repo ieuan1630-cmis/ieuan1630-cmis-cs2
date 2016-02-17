@@ -12,7 +12,7 @@ def BMI(weight, height):
 def output(name, BMI1):
     return """
 Hello {}
-Your BMIS is {}
+Your BMI is {}
 """.format(name, BMI1)
 
 def main():
@@ -21,7 +21,7 @@ def main():
     weight = raw_input("type your weight in kg: ")
     height = raw_input("type your height in metres: ")
     #processing
-    BMI1 = BMI(weight, height)
+    BMI1 = BMI(float(weight), float(height))
     #output
     print output(name, BMI1)
 
