@@ -3,7 +3,7 @@ def msg_box(txt): #takes text and returns it in a message box
         return "+" + ((len(txt) + 4) * "-") + "+" + "\n" + "|  " + txt + "  |" + "\n" + "+" + ((len(txt) + 4) * "-") + "+"
     else:
         #extract \n's right here
-        num_line = (len(txt))/(74.0)
+        num_line = (len(txt))/74.0
 	n = num_line
         return "+" + (78 * "-") + "+" + "\n" + ((int(n)) *("|  " + txt[((1*n) - 1):(74*n)] + "  |")) + "\n" + "+" + (78 * "-") + "+"
 
