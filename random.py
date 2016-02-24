@@ -5,33 +5,39 @@ def print_n(txt, num_of_times):
     x = "count"*n
     if num_of_times <= 0:
         return
-    print txt + str(n) + str(x)
-    n = n-1
-    print_n(txt, num_of_times -1)
+    else:
+        print txt + str(n) + str(x)
+        n = n-1
+        print_n(txt, num_of_times -1)
 
-def print_n2(txt, num_of_times):
+def print_n2(txt, num_of_times, num_of_times_fixed):
     txt = txt.replace("\n", " ")
-    lines_to_be_printed = (len(txt))/74.0
-    l = lines_to_be_printed
+    f = num_of_times_fixed
     n = num_of_times
-    x = "count"*n
     if num_of_times <= 0:
         return
-    print txt + str(n) + str(x)
-    n = n-1
-    print_n(txt, num_of_times -1)
+    else:
+        p = n
+        n = (f - n)
+        x = txt[74*n:(74*n)+74]
+        #print str(f) + " " + str(p) + " " + str(n) + " " + str(x)
+        print "|  " + str(x) + "  |"
+        print_n2(txt, num_of_times -1, num_of_times_fixed)
 
 #variables:
 num_line = 5
 n = num_line
-txt = "This is a load of sample text... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa\n \n \n \n \n \n qui officia deserunt mollit anim id est laborum."
+test_text = "This is a load of sample text... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa\n \n \n \n \n \n qui officia deserunt mollit anim id est laborum."
 
 #testing:
 #print "Hello" + (int(num_line) * "Hello")
 #print ((int(n)) * ("|  " + txt[(74*n):(74*n+73)] + "  |"))
 #print
-print_n("derp\n\nhello", 15)
-print_n2("spam", 7)
+#print_n("derp\n\nhello", 15)
+print_n2(test_text, 6, 6)
+#love = "lkjlkjlovelyfsdfsdaasf"
+#m = 6
+#print love[m:m+6]
 print
 print
 print
