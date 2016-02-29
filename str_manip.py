@@ -10,6 +10,21 @@ def print_n2(txt, num_of_times, num_of_times_fixed):
         print "|  " + str(x) + "  |"
         return print_n2(txt, num_of_times -1, num_of_times_fixed)
 
+def print_n3(txt, num_of_times, num_of_times_fixed):
+    if a - len(txt)%74 == 0:
+        print_n2(txt, num_of_times, num_of_times_fixed)
+    else:
+        txt = txt.replace("\n", " ")
+        f = num_of_times_fixed
+        n = num_of_times
+        if num_of_times <= 0:
+            return "+" + (78 * "-") + "+"
+        else:
+            n = (f - n)
+            x = txt[74*int(n):(74*int(n))+74]
+            print "|  " + str(x) + "  |"
+            return print_n2(txt, num_of_times -1, num_of_times_fixed)
+
 def msg_box(txt): #takes text and returns it in a message box
     txt = txt.replace("\n", " ")
     if len(txt) < 74:
@@ -18,10 +33,12 @@ def msg_box(txt): #takes text and returns it in a message box
         print "+" + (78 * "-") + "+"
         num_of_lines = len(txt)/74.0 #need to round this value to make it an integer but still reflect what i need it to say; conditional likely needed
         a = num_of_lines
-            if a - len(txt)%74
-        return str(print_n2(txt, a, a)) #can't concatenate print_n2 and strings
+        if a - len(txt)%74 == 0:
+            return str(print_n2(txt, a, a)) #can't concatenate print_n2 and strings
+        else:
+            return str(print_n2(txt, a, a)) + ":)" #print_n2 with setting the last line so that it adds extra space
 
-output = "This is a load of sample text... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa\n qui officia deserunt mollit anim id est laborum."
+output = "This is a load of sample text... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor\n in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa\n qui officia deserunt mollit anim id est laborum slfsjlfksdjflsj;."
 
 print msg_box("sdfasdasdfsfsdfa asf sadfasdf asd\n\n\n\njjjgfgfjkgjjjjjjjjjjjjjjhhhhhhhhhhhggggggggggggggggghhhhhhhhhh jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkkkk")
 print msg_box(output)
