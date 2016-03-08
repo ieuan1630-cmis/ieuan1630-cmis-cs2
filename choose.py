@@ -22,3 +22,26 @@ def JK():
         return "You're blind dumbo, of course he's in the house"
 
 print JK()
+
+
+def clapYourHands():
+    print "clap clap"
+def stompYourFeet():
+    print "stomp stomp"
+def TrueorFalse(string):
+    if string == "Yes" or string == "YES" or string == "yes":
+        string = True
+    else:
+        string = False
+    return string
+        
+def main():
+    youreHappy = TrueorFalse(raw_input("Are you happy? "))
+    youKnowIt = TrueorFalse(raw_input("Do you know it? "))
+    
+    if youreHappy and youKnowIt:
+        clapYourHands()
+        stompYourFeet()
+
+    print "Good bye"
+main()
