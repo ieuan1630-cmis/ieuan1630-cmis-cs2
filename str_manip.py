@@ -21,11 +21,10 @@ def print_n3(txt, num_of_times, num_of_times_fixed): #like print_n2 but works fo
         n = num_of_times #n is the number of times left to go
         if num_of_times <= 0: #if all lines of txt are printed the bottom of msgbox is returned
             return "+" + (78 * "-") + "+" #bottom of message box
-        elif num_of_times == 1.0:
+        elif num_of_times <= 1.0 and num_of_times > 0:
             n = (f - n) #n is redefined as the difference between the total number of times the recursion will occur (in this msgbox case this is equal to the number of lines of text), and the line number it is on; this then represents the number of times that have already passed (e.g. 3rd line of txt)
             x = txt[74*int(n):(74*int(n))+74] #n from above is used to select write slice of txt
             xtra_spaces = 74 - len(x)
-            print "IT REACHED THIS PART OF THE PROGRAM"
             print "|  " + str(x) + (xtra_spaces * " ") + "  |"
             return print_n3(txt, num_of_times -1, num_of_times_fixed)
         else:
@@ -49,3 +48,6 @@ output = "This is a load of sample text... Lorem ipsum dolor sit amet, consectet
 print msg_box("text < 74 characters \n\n works")
 print msg_box("so does text divisible by 74   \n\n\n\njjjgfgfjkgjjjjjjjjjjjjjjhhhhhhhhhhhggggggggggggggggggghhhhhhhhhh jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjkkkkkkl")
 print msg_box(output)
+
+user_input = raw_input("Copy and paste some text in here: ")
+print msg_box(user_input)
