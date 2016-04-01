@@ -27,11 +27,12 @@ def mc_points(result):
 def delayed_gratification_check(answer):
     print list_to_string(["Haha", "hehe", "funny", "u are"][0:(random.randint(1,4)):1])
     see_answer = raw_input("Would you like to see the answer?(y or n)")
-    if see_answer == "y":
-        print answer
-        return False
-    elif see_answer == "n":
+    if see_answer == "n":
+        print ""
         return True
+    elif not see_answer == "n":
+        print "The best answer is: " + answer + "\n"
+        return False
 
 def calculate_IQ(score):    #mental age as calculated by their score divided by their actual age x100 = IQ
     age = float(raw_input("How old are you?"))
@@ -46,6 +47,7 @@ def calculate_IQ(score):    #mental age as calculated by their score divided by 
     elif 34.5 < score < 46:
         mental_age = 100
     IQ = (mental_age/age) *100
+    IQ = IQ + ((random.choice([-1, 1])) * (random.random() * 15))
     return IQ
 
 
@@ -121,7 +123,7 @@ a) June b) July c) Mary
     dgc7 = delayed_gratification_check("c")
     score = score + mc_points(dgc7)
  
-    A8 = raw_input("""Q8: If you were running in a race and paced the person in 2nd place what position would you be in?
+    A8 = raw_input("""Q8: If you were running in a race and passed the person in 2nd place what position would you be in?
 a) 1st b) 2nd c) 3rd
 """)
     R8 = mc_answer_check(A8, "b")
@@ -137,7 +139,7 @@ a)North b) East c) Neither
     dgc9 = delayed_gratification_check("c")
     score = score + mc_points(dgc9)
  
-    A10 = raw_input("""Q10: Is it legal for a man to marry a widow's sister?
+    A10 = raw_input("""Q10: Is it legal for a man to marry his widow's sister?
 a)Yes b) In some countries c) He can't
 """)
     R10 = mc_answer_check(A10, "c")
@@ -228,9 +230,10 @@ def response(prompt, allowed):
 #-----------The 4th can do what ever you want. dgchecker
 #-----------Define a main() function to organize the flow of your program. Be sure to think about the three phases (input, processing, output)
 #-----------Use at least 3 different relational operators. use to define IQ in IQ calculator
-#Use each of the logical operators at least once. 
-#------------Use random.random() used to randomly print haha responses
-#and random.randint() at least once each in your script.
+#-------------Use each of the logical operators at least once. and + or used
+#-------------use not logical operator -- used to in mc_answer_check
+#------------Use random.random() -- used to add or subtract deviation
+#------------and random.randint() at least once each in your script. used to randomly print haha responses
 #------------Use str.format() at least once in your script. print score
 #------------Use """ or ''' strings at least once in your script.
 #------------Write an interesting and/or entertaining story/game.
