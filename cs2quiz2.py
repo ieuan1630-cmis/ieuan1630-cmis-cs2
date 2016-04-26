@@ -25,20 +25,20 @@
 #problem2_a) = True
 #problem2_b) = False
 #problem2_c) = False
-#problem2_d) = False
+#problem2_d) = False    x
 #
 #problem3_a) = 0.3
 #problem3_b) = 0.5
 #problem3_c) = 0.5
 #problem3_d) = 0.5
 #
-#problem4_a) = 7
-#problem4_b) = 5
-#problem4_c) = 0.125
+#problem4_a) = 7        x
+#problem4_b) = 5        x
+#problem4_c) = 0.125    x
 #problem4_d) = 5
 #
 
-#PART 3: Programming
+#PART 3: Programming    100%
 #Write a script that asks the user to type in 3 different numbers.
 #If the user types 3 different numbers the script should then print out the
 #largest of the 3 numbers.
@@ -55,10 +55,10 @@ def different_or_not(a, b, c):
         elif c > a and c > b: # checks if c is greatest
             return c
     else:
-        return False #if one number isn't greater than both others, False is returned
+        return "False" #if one number isn't greater than both others, False is returned
 
 def output(largest):
-    if largest == False:
+    if largest == "False":
         return "You didn't follow directions"
     else:
         return "The largest number was {}".format(largest)
