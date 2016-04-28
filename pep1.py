@@ -12,4 +12,4 @@ def main(n, summation):
             summation += n
         return main(n-1, summation)
 
-print main(499, 0)
+print main(10, 0)
