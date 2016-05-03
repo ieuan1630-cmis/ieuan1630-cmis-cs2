@@ -8,8 +8,9 @@ def main(n, summation):
     if n == 0:
         return summation
     else:
+        n -= 1
         if n % 3 == 0 or n % 5 == 0:
             summation += n
-        return main(n-1, summation)
+        return main(n, summation)
 
 print main(10, 0)
