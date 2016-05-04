@@ -29,7 +29,10 @@ def comp_guess(reps=5, low=0, high=100):
 """
         return False
     else:
-        guess = low + ((high - low)/2)
+        if reps == 1:
+            guess = random.randint(low+1, high-1)
+        else:
+            guess = low + ((high - low)/2)
         result = raw_input(("Computer's guess: {} (c, l, or h)".format(guess)))
         if result == "c":
             print """Argh you computer, that was my number
@@ -49,7 +52,7 @@ def rounds(num_rounds, hum_score, comp_score):
         elif hum_score < comp_score:
             winner = "Computer"
         elif hum_score == comp_score:
-            winner = "no one"
+            winner = "No one"
         print """Human score: {}
 Computer score: {}
 {} wins!
