@@ -4,28 +4,32 @@
 
 def palindrome(test):
     while len(test) > 2:
-        if test[0] == test[(len(test)-1)]:
-            test = test.rstrip(test[(len(test)-1)])
+        if test[0] == test[-1]:
+            test = test.rstrip(test[-1])
             test = test.lstrip(test[0])
         else:
             return False
-    if test[0] == test[(len(test)-1)]:
+    if test[0] == test[-1]:
         return True
 
-#print palindrome(str(98089))
+print palindrome(str(9000))
 
 def largest_palindrome_from_3digitproducts():
     hi_p = 0
     t1 = 999
     t2 = 999
-    while t2 >=1:
-        test = t1*t2
-        if palindrome(str(test)) == True and test > hi_p:
-            hi_p = test
+    while t1 >= 100:
+        while t2 >=100:
+            test = t1*t2
+            print test
+            if palindrome(str(test)) == True and test > hi_p:
+                hi_p = test
+            t2 -=1
+        t1 -=1
         t2 -=1
-    t1 -=1
-    if t1 == 0:
-        return hi_p
+    return hi_p
+
+#print largest_palindrome_from_3digitproducts()
 
 def largest_palindrome_from_3digitproductsr(test=999): #with recursion (doesn't work yet) (semantic error cos only 999*999 and 999*998 not 999*997)
     large_num = test * test
@@ -37,7 +41,7 @@ def largest_palindrome_from_3digitproductsr(test=999): #with recursion (doesn't 
     else:
         return largest_palindrome_from_3digitproductsr(test-1)
 
-print largest_palindrome_from_3digitproducts()
+#print largest_palindrome_from_3digitproductsr()
 
 """
 print 9*9 #highest square #digits involved 1
