@@ -1,3 +1,4 @@
+#GRADED: 100% on terminology and reading. 9/10 for program for no main function initially
 #Section 1: Terminology
 # 1) What is a recursive function?
 # A function that calls itself as a means of repeating certain lines of code
@@ -47,6 +48,15 @@
 #In your code for the script, add a comment labeling the base case  on the line BEFORE the base case.
 #Also add a comment label BEFORE the recursive case.
 #It is NOT NECESSARY to print out a running total with each user input.
+
+#GRADING:
+# +2 base case is present (MUST BE LABELED)
+# +2 recursive case is present (MUST BE LABELED)
+# +1 base case returns sum/ct (or equivalent)
+# +2 recursive case filters even numbers
+# +1 recursive case increments sum and ct correctly
+# +1 recursive case returns correct recursive call
+# -1 main function present AND called 
 
 def avg_odd_input(summation=0, odds=0):
     num = raw_input("Next number: ")
