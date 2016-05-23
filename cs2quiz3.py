@@ -60,4 +60,7 @@ def avg_odd_input(summation=0, odds=0):
         else:
             return avg_odd_input(summation, odds)
 
-print avg_odd_input()
+def main():
+    return avg_odd_input()
+
+print main()
