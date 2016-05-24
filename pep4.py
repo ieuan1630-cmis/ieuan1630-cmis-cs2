@@ -12,24 +12,37 @@ def palindrome(test):
     if test[0] == test[-1]:
         return True
 
-print palindrome(str(9000))
+#print palindrome(str(99000009))
+
+def palindrome2(test):
+    if test == "".join(reversed(test)):
+        return True
+    else:
+        return False
+
+#print palindrome2("31213")
 
 def largest_palindrome_from_3digitproducts():
     hi_p = 0
     t1 = 999
     t2 = 999
+    count = 0
     while t1 >= 100:
-        while t2 >=100:
+        t2 = 999 - count
+        #print "t1 = {}".format(t1)
+        while t2 >= 1:
+            #print "t2 = {}".format(t2)
             test = t1*t2
-            print test
-            if palindrome(str(test)) == True and test > hi_p:
+            if palindrome2(str(test)) == True and test > hi_p:
                 hi_p = test
+                #print hi_p
             t2 -=1
+        count += 1
         t1 -=1
         t2 -=1
-    return hi_p
+    return "hi_p = {}".format(hi_p)
 
-#print largest_palindrome_from_3digitproducts()
+print largest_palindrome_from_3digitproducts()
 
 def largest_palindrome_from_3digitproductsr(test=999): #with recursion (doesn't work yet) (semantic error cos only 999*999 and 999*998 not 999*997)
     large_num = test * test
