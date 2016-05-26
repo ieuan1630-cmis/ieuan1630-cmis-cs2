@@ -21,9 +21,6 @@ def largest_prime_factor(num, test=2, highest=1):
         test += 1
     return highest
 
-
-print largest_prime_factor(600851475143)
-
 def prime_recursion(num, test=2, factors=0):
     if test == num:
         if factors == 0:
@@ -48,3 +45,9 @@ def largest_prime_factor_recursion(num, test=2, highest=1):
         else:
             return largest_prime_factor_recursion(num, test+1, highest)
     pass
+
+def main():
+    print largest_prime_factor(600851475143)
+
+if __name__=="__main__":
+    main()
