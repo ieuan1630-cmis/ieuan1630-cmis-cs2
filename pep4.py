@@ -39,7 +39,6 @@ def largest_palindrome_from_3digitproducts():
             t2 -=1
         count += 1
         t1 -=1
-        t2 -=1
     return "hi_p = {}".format(hi_p)
 
 print largest_palindrome_from_3digitproducts()
